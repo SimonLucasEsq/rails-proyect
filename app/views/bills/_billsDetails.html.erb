@@ -1,0 +1,12 @@
+<%= form.fields_for :bills_details do |detail_form| %>
+    <div class="form-inline mt-2">
+      <%= detail_form.label "Productos", class:"m-2"%>
+      <%= detail_form.select :product_id, @products , {},{:class=> "custom-select"}%>
+      <%= detail_form.label "cantidad", class:"m-2 ml-4"%>
+      <%= detail_form.text_field :quantity, class: "form-control" %>
+      <%= detail_form.label "total", class:"m-2 ml-4"%>
+      <%= detail_form.text_field :total, class: "form-control" %>
+      <%= detail_form.link_to_remove "Remove this task", class: "m-2" %>
+    </div>
+<% end %>
+<p><%= form.link_to_add "Add a detail", :bills_details, class: "p-2" %></p>

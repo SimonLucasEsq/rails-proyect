@@ -1,0 +1,61 @@
+<div class="card m-2">
+  <div class="card-header">
+    Nueva Factura
+  </div>
+  <div class="card-body px-4 py-1">
+    <%= nested_form_for @bill do |form| %>
+      <% if bill.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+          <ul>
+            <% bill.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="d-flex bd-highlight">
+        <div class="mr-auto px-2">
+          <%= form.label :company %>
+          <%= form.text_field :company, :class=>"form-control" %>
+        </div>
+        <div class="px-2">
+          <%= form.label :number %>
+          <%= form.number_field :number, :class=>"form-control" %>
+        </div>
+
+        <div class="px-2">
+          <%= form.label :timbrado %>
+          <%= form.text_field :timbrado, :class=>"form-control" %>
+        </div>
+      </div> 
+        <div class="px-2">
+        <%= form.label :date %>
+        <%= form.date_field :date, :class=>"form-control w-auto" %>
+      </div>
+      <div class="d-flex bd-highlight">
+        <div class="mr-auto px-2">
+          <%= form.label :user %>
+          <%= form.text_field :user, :class=>"form-control" %>
+        </div>
+        <div class="field px-2">
+          <%= form.label :ruc %>
+          <%= form.text_field :ruc, :class=>"form-control" %>
+        </div>
+      </div>
+      <div class="field px-2">
+        <%= form.label :address %>
+        <%= form.number_field :company_address, :class=>"form-control" %>
+      </div>
+      <div class="field px-2">
+        <%= form.label :total %>
+        <%= form.number_field :total, :class=>"form-control" %>
+      </div>
+      <%= render partial: 'billsDetails', locals: {form: form} %>
+      <div class="actions p-2">
+        <%= form.submit "Nueva Factura", :class=>"btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
