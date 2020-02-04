@@ -19,6 +19,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 #This is a Rails gem for conveniently manage multiple nested models in a single form.
 gem 'nested_form'
+#Devise is a flexible authentication solution for Rails based on Warden
+gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
